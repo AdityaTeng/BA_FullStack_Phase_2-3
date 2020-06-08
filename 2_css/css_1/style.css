@@ -1,0 +1,335 @@
+h3{
+    color:blue;
+}
+
+/* Colors in CSS:
+    1. Color names
+    2. HTML5 color names
+    3. Hexadecimal
+    4. RGB  */
+
+body{
+    color: black;                   /*html color names*/
+    background: lightgrey;              /*html5 color names*/
+}
+
+small{
+    color: #00ff00;                 /*Hexadecimal color codes*/
+}
+
+h4{
+    color: rgb(50, 100, 150);       /*RGB values */
+}
+
+/* Fonts in CSS */
+/*Serif vs Sans-Serif
+    A serif is a decorative stroke that finishes off the
+    end of a letters stem (sometimes also called the “feet” of the letters).
+    In turn,  a serif font is a font that has serifs, while a sans serif
+    is a font that does not (hence the “sans”). 
+        Link: https://www.impactbnd.com/blog/sans-serif-vs-serif-font-which-should-you-use-when
+
+Monospaced Fonts
+    A monospaced font, also called a fixed-pitch, fixed-width, or 
+    non-proportional font, is a font whose letters and characters each occupy
+    the same amount of horizontal space. 
+        Link: https://en.wikipedia.org/wiki/Monospaced_font*/
+
+/* Web Safe Fonts and Fallback Fonts:
+    Link: https://www.w3schools.com/cssref/css_websafe_fonts.asp
+    Link: https://websitesetup.org/web-safe-fonts-html-css/ */
+
+p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: normal;
+    /* shorter way of doing the same thing */
+    /* font: normal 16px 'Courier New', Courier, monospace */
+    line-height: 1.5em;
+}
+
+/* Classes and ids
+HTML Attributes for styling:
+    Class:
+        The HTML class attribute is used to define equal styles for elements
+        with the same class name.
+        So, all HTML elements with the same class attribute will get the same style. 
+    Id:
+        The id attribute specifies a unique id for an HTML element (the value
+        must be unique within the HTML document).
+        The id value can be used by CSS and JavaScript to perform certain tasks for the
+        element with the specific id value.
+*/
+
+.box_1{
+    background-color: white;
+    color: maroon;
+}
+
+.container{
+    margin: auto;
+    /*not responsive */
+    /* width: 480px;  */
+    /* responsive */
+    width: 80%;
+}
+
+/* CSS Box Model:
+    All HTML elements can be considered as boxes.
+    In CSS, the term "box model" is used when talking about design and layout.
+    The CSS box model is essentially a box that wraps around every HTML element.
+    It consists of: margins, borders, padding, and the actual content.
+
+    Explanation of the different parts:
+    Content - The content of the box, where text and images appear
+    Padding - Clears an area around the content. The padding is transparent
+    Border - A border that goes around the padding and content
+    Margin - Clears an area outside the border. The margin is transparent */
+    /* Link: https://www.w3schools.com/css/css_boxmodel.asp */
+
+
+.box_2{
+    background-color: linen;
+    color: darkslategrey;
+    /* Padding  */
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    /* Border  */
+    border-top: 5px;
+    border-right: 5px;
+    border-bottom: 5px;
+    border-left: 5px;
+    border-color: firebrick;
+    border-style: solid;
+    /* Margin  */
+    margin-top: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    
+    width: 80%;      /*80% of container*/
+}
+
+
+.box_3{
+    background-color: lemonchiffon;
+    color: darkslategrey;
+    padding: 5px;
+    border: 5px maroon solid;
+    margin: 40px;
+    width: 80%;
+}
+
+/* Styling tags in classes */
+.box_3 h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    word-spacing: 1em;
+}
+
+.categories{
+    border: 1px lightgray solid;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.categories h2{
+    text-align: center;
+}
+
+.categories ul{
+    list-style: none;
+}
+
+/* Link tag with different states */
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: red;
+}
+
+/* a:active{
+    color:green;
+}
+a:visited{
+    color: maroon;
+} */ 
+
+.categories li{
+    padding-bottom: 8px;
+    border-bottom: dotted  1px darkblue;
+}
+
+/* Forms  */
+.my_form{
+    padding: 20px;
+}
+
+.my_form .form_group{
+    padding: 20px;
+}
+
+/* Label is inline by default but can be changed to block.  */
+.my_form label{
+    display:block
+}
+
+.my_form input{
+    padding:8px;
+    width: 100%;
+}
+
+.button{
+    background-color: black;
+    color: white;
+    padding: 40px;
+    border: none;
+}
+.button:hover{
+    background-color: darkslategrey;
+    color: white;
+}
+
+
+/* Alignment and Floating */
+
+/* for clearing any floats above it  */
+/* Link: https://www.w3schools.com/css/css_float.asp */
+.clr{
+    clear: both;
+}
+
+.block{
+    float:left;
+    width: 33.3%;
+    border: 2px solid black;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+#main-block{
+	float:left;
+	width:70%;
+	padding:15px;
+	box-sizing: border-box;
+}
+
+#sidebar{
+	float:right;
+	width:30%;
+	background-color:#333;
+	color:#fff;
+	padding:15px;
+	box-sizing: border-box;
+}
+
+/* Positioning in CSS 
+The position property specifies the type of
+positioning method used for an element.
+There are five different position values:
+
+static      :       HTML elements are positioned static by default.
+                    Static positioned elements are not affected by 
+                    the top, bottom, left, and right properties.
+                    An element with position: static; is not positioned
+                    in any special way; it is always positioned according
+                    to the normal flow of the page
+
+relative    :       An element with position: relative; is positioned
+                    relative to its normal position. Setting the top, right,
+                    bottom, and left properties of a relatively-positioned
+                    element will cause it to be adjusted away from its normal
+                    position. Other content will not be adjusted to fit into any
+                    gap left by the element.       
+
+fixed       :       An element with position: fixed; is positioned relative
+                    to the viewport, which means it always stays in the same place
+                    even if the page is scrolled. The top, right, bottom, and
+                    left properties are used to position the element.
+                    A fixed element does not leave a gap in the page where it 
+                    would normally have been located.  
+
+absolute    :       An element with position: absolute; is positioned relative
+                    to the nearest positioned ancestor (instead of positioned
+                    relative to the viewport, like fixed). However; if an
+                    absolute positioned element has no positioned ancestors,
+                    it uses the document body, and moves along with page 
+                    scrolling.
+
+sticky      :       An element with position: sticky; is positioned based on
+                    the user's scroll position. A sticky element toggles
+                    between relative and fixed, depending on the scroll
+                    position. It is positioned relative until a given offset
+                    position is met in the viewport - then it "sticks" in
+                    place (like position:fixed).
+
+
+Link: https://www.w3schools.com/css/css_positioning.asp
+*/
+
+
+.p-box{
+	width:800px;
+	height:500px;
+	border:1px solid #000;
+	margin-top:30px;
+	position: relative;
+	background-image:url('bgimage.jpg');
+	/* background-repeat: no-repeat; */
+	/* background-position:100px 200px; */
+	/* background-position:center top; */
+}
+
+.p-box h1{
+    position: absolute;
+    top:40px;
+	top:100px;
+	left:200px;
+}
+
+.p-box h2{
+	position:absolute;
+	bottom:40px;
+	right:100px;
+}
+
+.fix-me{
+	position:fixed;
+    top:600px;
+}
+
+.fix-me-2{
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    background-color: #cae8ca;
+    border: 2px solid #4CAF50;
+}
+
+
+
+/* Pseudo Elements */
+/* first-child */
+.my-list li:first-child{
+	background: red;
+}
+
+.my-list li:last-child{
+	background: blue;
+}
+
+.my-list li:nth-child(5){
+	background: yellow;
+}
+
+.my-list li:nth-child(even){
+	background: grey;
+}

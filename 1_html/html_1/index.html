@@ -1,0 +1,303 @@
+<!-- HTML: Hyper Text Markup Language
+
+Not a Programming Language
+It is a markup language for creating webpages and documents
+key elements of a pogramming lauage is logic: if this is true, do this
+html doesnt have that, html is used to just display and format elements of a webpage.
+html is strcitlty presentational.
+
+To get started:
+    > browser [suggested is Google Chrome]
+    > text editor [VS Code]
+
+Creating an html file:
+> doesnt need a server
+> .html extention
+> runs in a web browser
+> index.html is the root/homepage of a website -->
+
+<!-- Hello World
+
+Tag Syntax
+
+Html tag is the building block of any webpage. 
+Different tags format the way in which information and text is displayed.
+Element names are surrounded in angle brackets <element_name> 
+
+Tags usually come in pairs:
+<tagname>content</tagname>
+<h1>About Us</h1>
+<br> : Self closing tags line break tag -->
+
+<!-- HTML Page Structure
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+        <h1>This is a heading.</h1>
+        <p>This is a paragraph.</p>
+        <p>This is another paragrph.</p> 
+    </body>
+</html> 
+
+
+<!-- Head:
+Head has nothing to do with the output of the browser.
+Head has things like the page title, links to css and javascript files,
+metadata, description and keywords. -->
+
+<!-- Body:   
+Actual content which will be displayed in the browser.
+Heading, text, images, etc.
+
+<!DOCTYPE html>
+It is just a declaration and it should always be the first thing on the webpage.
+It tells the browser what type of html the page is written in
+<!DOCTYPE html> is standard doctype for html 5 -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Introduction to HTML.</title>
+    </head>
+    <body>
+        <!-- Headings -->
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <hr>
+        <!-- Paragraphs -->
+        <!-- type lorem10 to generate 10 random words -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Beatae amet accusantium <strong>error!</strong> Amet voluptate quasi, ea possimus
+        eveniet suscipit sequi dolorem aut quia ut iure quisquam
+        necessitatibus dolor cupiditate tempora.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Beatae amet <em>accusantium error!</em> Amet voluptate quasi, ea possimus
+        eveniet suscipit sequi dolorem aut quia ut iure quisquam
+        necessitatibus dolor <a href="https://www.google.com" target="_blank">cupiditate tempora.</a></p>
+       
+       
+       
+<!-- Check chrome dev tools for defalut styles: user agent stylesheet -->
+<!-- To see exact source code on the brwoser:  ctrl+u
+Developer Tools: F12 -->
+
+<!-- Inline elements and Block elements:
+Inline: Do not start on a new line and take only the necessary width.
+eg: <span>, <img>, <a>, <strong>, <em>
+Block: Start on a new line and take full width availabe.
+eg: <div>, <h1>-<h6>, <p>, <form>
+Link: https://www.w3schools.com/html/html_blocks.asp-->
+
+        
+<!-- 
+<strong></strong>   : bold by default, can be changed using css.
+<em></em>           : italic by default.
+<a></a>             : link to go to. internal or external.
+href            : gives the location/link we want to go to.
+target="_blank" : opens link in new tab.
+<hr>                : horizontal rule.
+
+Attributes: 
+All tags can have attributes
+Provide more info about the tag.
+Always formatted in key value pairs.
+Always placed in the start tag.
+    target is the key, "_blank" is the value
+    value is in quotes, double or single.-->
+        
+        <br>
+        <!-- <hr> -->
+        <br>
+
+
+<!-- Lists -->
+
+<!-- unordered list -->
+<!-- gives bullet points by default -->
+        <ul>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+            <li>List item 4</li>
+        </ul>
+        <!-- ordered list -->
+        <!-- gives numbers by default -->
+        <ol>
+            <li>List item 1</li>
+            <li>List item 2</li>
+            <li>List item 3</li>
+            <li>List item 4</li>
+        </ol>
+
+
+        <br>
+        <hr>
+        <br>
+        
+        
+<!-- Tables:
+<table>             : table tag
+<thead>             : table head
+<tr>                : table row
+<th>                : table heading
+<tbody>             : table body
+<tr>                : table row
+<td>                : table data -->
+
+        <!-- table -->
+        <table border="4">     <!--The border attribute of <table> is not supported in HTML5. Use CSS instead.-->
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Scarlett Johansson</td>
+                    <td>scarlett_johansson@gmail.com</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td>Tom Hardy</td>
+                    <td>tom_hardy@gmail.com</td>
+                    <td>42</td>
+                </tr>
+                <tr>
+                    <td>Jennifer Aniston </td>
+                    <td>jennifer_aniston@gmail.com</td>
+                    <td>51</td>
+                </tr>
+                <tr>
+                    <td>Morgot Robbie</td>
+                    <td>margot_robbie@gmail.com</td>
+                    <td>29</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+        <br>
+        <hr>
+        <br>
+        
+        
+<!-- Forms:
+<form>              : form tag
+    action          : value is a URL, where to send the form-data when the form is submitted.
+                        Possible values:
+                            An absolute URL - points to another web site (like action="http://www.example.com/example.htm")
+                            A relative URL - points to a file within a web site (like action="example.htm")
+    method          : value=POST, GET
+                        sends a request to the server.
+<label>             : form field label, inline element.
+<input>             : form field, inline element.
+    type            :  values> text, email, number, date, submit
+    name            : Specifies the name of the <input> element
+                        The name attribute is used to reference elements in a JavaScript, or to reference form data after a form is submitted.
+    placeholder     : Specifies a short hint that describes the expected value of the input field
+<select>            : dropdown select 
+    value           : The value to be sent to the server
+<div>               : block elements, to put label and inputs in different lines. -->
+        
+        <form action="action.php" method="POST">
+            <div>
+                <label>First Name: </label>
+                <input type="text" name="first_name" placeholder="Enter your first name"></input>
+            </div>
+            <br>
+            <div>
+                <label>Last Name: </label>
+                <input type="text" name="last_name" placeholder="Enter your last name"></input>
+            </div>
+            <br>
+            <div>
+                <label>Email: </label>
+                <input type="email" name="email" placeholder="Enter your email"></input>
+            </div>
+            <br>
+            <div>
+                <label >Message: </label>
+                <textarea type="text" name="msg" placeholder="Enter your message" ></textarea>
+            </div>
+            <br>
+            <div>
+                <label >Gender: </label>
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label >Age: </label>
+                <input type="number" name="age"  placeholder="Enter your age">
+            </div>
+            <br>
+            <div>
+                <label >Date of birth: </label>
+                <input type="date" name="b_day"></input>
+            </div>
+            <input type="submit" name="submit" value="submit"></input>
+            </form>
+        
+        <!-- Button -->
+        <div>
+        <a target="_blank" href="https://www.google.com/search?q=click+button+images&tbm=isch&ved=2ahUKEwiMmrXptNvoAhVIIysKHcxNAo8Q2-cCegQIABAA&oq=click+button+images&gs_lcp=CgNpbWcQAzICCAAyBggAEAgQHjIICAAQCBAKEB46BAgjECc6BAgAEEM6BQgAEIMBOgQIABAeOgQIABAYUPBAWONzYJ3HAmgBcAB4AIABsAGIAfEUkgEEMS4xOZgBAKABAaoBC2d3cy13aXotaW1n&sclient=img&ei=Gx6PXsygN8jGrAHMm4n4CA&bih=722&biw=1536">
+        <button >Click Me!</button>
+        </a>
+        </div>
+        <!-- To add some event trigger over here we can use javascript  -->
+        
+        
+        <br>
+        <hr>
+        <br>
+
+<!-- images -->
+<!-- <img>               : inline tag for images
+    src
+    alt
+    width
+    height -->
+        <a target="_blank" href="https://www.google.com/search?q=landscapes&sxsrf=ALeKk035UzV1raCAMvTTt5zYZVJOI5dmPQ:1586437545910&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjQ-4aztNvoAhXYcn0KHTwDBJgQ_AUoAXoECBUQAw&biw=1536&bih=722">
+        <img src="/1_html/html_1/images/landscape.jpg" alt="landscape image"> 
+        </a>
+        
+        <br>
+        <hr>
+        <br>
+
+<!-- Quotations -->
+<!-- Link: https://www.w3schools.com/html/html_quotation_elements.asp -->
+<!-- <blockquote>           : The <blockquote> tag specifies a section that is quoted from another source.
+                                Browsers usually indent <blockquote> elements.
+    cite                    : Specifies the source of the quotation -->
+<!-- <abbr>                 : The <abbr> tag defines an abbreviation or an acronym, like "HTML", "Mr.", "Dec.", "ASAP", "ATM". -->
+        <blockquote cite="https://www.google.com">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Quaerat sed soluta ab ipsa nostrum repellendus eveniet,
+            fuga fugit eius inventore, qui, natus aliquid quisquam dicta!
+            Consequatur magnam nisi pariatur harum.
+            <abbr title="Rolling On the Floor Laughing">ROFL!</abbr> This is funny.
+        </blockquote>
+
+
+    
+    </body>
+</html>
+
+
+
+
+
+
+
+

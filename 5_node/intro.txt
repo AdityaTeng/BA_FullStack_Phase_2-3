@@ -1,0 +1,38 @@
+Node.js
+        is an open source server environment
+        uses JavaScript on the server.
+        uses asynchronous programming.
+
+Advantages:
+    Fast, efficient, highly scalable
+    Event Driven, non-blocking I/O model 
+        >> asynchronous handling of request
+    Same Language on frontend and backend
+
+Disadvantages:
+    nor good for CPU intensive applications
+
+Suitable application types for node
+    REST APIs & Microservices
+    Chat, Live Updates
+    CRUD apps- Blogs, social network, shopping apps
+
+
+NPM - Node Package Manager
+    to install 3rd party packages (frameworks, libraries, tools)
+    packages are stored in node_modules folder
+    all dependencies are listed in a package.json file
+
+Getting Started with Node:
+    > npm init - helps create the package.json
+    > npm install - install packages
+
+
+
+
+
+
+
+
+
+    

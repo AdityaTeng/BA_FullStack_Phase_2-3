@@ -1,0 +1,113 @@
+<!-- HTML 5 Semantic Tags
+    A Semantic element clearly describes its meaning to both browser and developer.
+    Examples of non-semantic elements: <div> and <span> - Tells nothing about its content.
+    Examples of semantic elements: <form>, <table>, and <article> - Clearly defines its content.
+        Link: https://www.w3schools.com/html/html5_semantic_elements.asp-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="My Blog">
+    <meta name="keywords" content="Blog, Category, HTML">
+    <meta name="author" content="John Doe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+</head>
+<!-- The HTML charset Attribute
+    To display an HTML page correctly, a web browser must know the character set used in the page.
+    This is specified in the <meta> tag:
+        <meta charset="UTF-8">
+
+Metadata is data (information) about data.
+The <meta> tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable.
+Meta elements are typically used to specify page description, keywords, author of the document, last modified, and other metadata.
+The metadata can be used by browsers (how to display content or reload page), search engines (keywords), or other web services.
+
+What is Responsive Web Design?
+    Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones):
+    Setting The Viewport:
+        When making responsive web pages, add the following <meta> element in all your web pages:
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<body>
+    <!-- <header>	Specifies a header for a document or section -->
+    <header>
+        <h1>My Blog</h1>
+    </header>
+    <!-- <section>	Defines a section in a document -->
+    <section>
+        <!-- <article>	Defines an article -->
+        <article>
+            <h3>Blog Post 1</h3>
+            <small>Author Name 1</small>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Ea adipisci commodi dolores voluptatem! Qui ipsum suscipit eaque,
+                voluptates aperiam exercitationem iste eius facere quibusdam,
+                velit nisi sunt cum. Quam, a.</p>
+                <a href='post.html'>Read More....</a>
+        </article>
+        <br>
+        <article>
+            <h3>Blog Post 2</h3>
+            <small>Author Name 2</small>
+            <!-- <mark>	Defines marked/highlighted text -->
+            <p>Lorem ipsum dolor sit amet <mark>consectetur adipisicing elit.</mark>
+                Ea adipisci commodi dolores voluptatem! Qui ipsum suscipit eaque,
+                voluptates aperiam exercitationem iste eius facere quibusdam,
+                velit nisi sunt cum. Quam, a.</p>
+                <a href='post.html'>Read More....</a>
+        </article>
+        <br>
+        <article>
+            <h3>Blog Post 3</h3>
+            <small>Author Name 3</small>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Ea adipisci commodi dolores voluptatem! Qui ipsum suscipit eaque,
+                voluptates aperiam exercitationem iste eius facere quibusdam,
+                velit nisi sunt cum. Quam, a.</p>
+                <a href='post.html'>Read More....</a>
+        </article>
+    </section>
+    <!-- <aside>	Defines content aside from the page content -->
+    <aside>
+        <h2>Categories</h2>
+        <!-- <nav>	Defines navigation links -->
+        <nav>
+        <ul>
+            <li><a href='category_1.html'>Category 1</a></li>
+            <li><a href='category_2.html'>Category 2</a></li>
+            <li><a href='category_3.html'>Category 3</a></li>
+            <li><a href='category_4.html'>Category 4</a></li>
+        </ul>
+        </nav>
+    </aside>
+    <!-- <footer>	Defines a footer for a document or section -->
+    <footer>
+        <p>Copyright &copy; 2020, My Website.</p>
+    </footer>
+    <!-- <details>	Defines additional details that the user can view or hide -->
+    <details>
+        <!-- <summary>	Defines a visible heading for a <details> element -->
+        <summary>Copyright 2020.</summary>
+        <p> - by John Doe. All Rights Reserved.</p>
+        <p>All content and graphics on this web site are the property of the
+            company Refsnes Data.</p>
+      </details>
+</body>
+</html>
+
+
+<!-- HTML Attributes for styling:
+    Class:
+        The HTML class attribute is used to define equal styles for elements
+        with the same class name.
+        So, all HTML elements with the same class attribute will get the same style. 
+    Id:
+        The id attribute specifies a unique id for an HTML element (the value
+        must be unique within the HTML document).
+        The id value can be used by CSS and JavaScript to perform certain tasks for the
+        element with the specific id value. -->
+<!-- Will see this in CSS. -->

@@ -1,0 +1,379 @@
+What is react?
+
+	React is a JavaScript library created by Facebook
+	It is used to create User Interfaces (UI) for Frontend Applications.
+	It is often called a framework because of its behavior and capabilities.
+	One of the most popular js framework in the industry.
+
+Why use react?
+	
+	react makes it easy to create intricate frontend projects. (less code)
+	very organized and uses self contained, independent components with their own state.
+	allows us to build much more interactive UIs
+	provides the Virtual DOM - Link: https://www.codecademy.com/articles/react-virtual-dom 
+	Recact also uses JSX - which allows the usage of js in the html markup
+	
+What you should know before learing react?
+	
+	Objects, Arrays, Conditionals
+	Classes
+	Destructuring
+	Higher Order Array Methods
+	Arrow Functions
+
+What is State in react?
+state is an object which components can have that determines how the component
+renders or behaves.
+We can also have "application level" state by using a state manager like Redux or
+Reacts own context API.
+
+Install npm and node.js from link:
+https://nodejs.org/en/
+
+Also installl react dev tools extention
+
+And Run command:
+npx create-react-app <app_name>
+to create react app
+
+Application will be generated with a standard folder structure.
+
+package.json 		: It has all the packages and dependencies that are being used.
+			If we install other packages it will be added here.
+		
+public index.html 	: React is a single page application framework. So, everything
+			runs through one page i.e. index.html 
+			<div id="root"></div> is the output for all your react stuff.
+			main app component outputs here.
+
+How the app component goes to index.html? From src index.js
+
+src index.js		: entry point to react, importing React, ReactDOM and App which
+			is the main app component. ReactDOM renders the App component (i.e. app.js)
+			into the root element in index.html.
+
+
+src app.js			:  It is the main component. app.js is rendered in index.js,
+					 has JSX code. Edit code in JSX and run "npm start" to run
+					 the app on localhost:3000
+
+
+Steps Followed in Basic Clean up:
+del  index.css,  comment import css in index.js
+del logo.svg,  comment import logo in app.js, change code to render "hello world" in div.
+clear App.css, change to basic css.
+
+run: npm start.
+
+Next:
+create new folder components.
+create a new component:
+	Todos.js in a new folder components. 
+	class based components just like app.js
+	copy app.js content and paste in Todos.js
+	change class, export and h1 to Todos.
+	remove className
+import Todos in app.js
+add Todos tag in return div
+
+State: different components can have their own state,
+ 		but ther might be cases where multiple
+		components need to acces one state.
+
+Add state to class App in App.js
+state  = {
+	todos :{
+        id : 1,
+        title : "meeting with boss",
+        completed : false,
+      },
+      {
+        id : 1,
+        title : "dinner with wife",
+        completed : false,
+      },
+      {
+        id : 3,
+        title : "take out trash",
+        completed : false,
+      }
+    ]
+  }
+
+  Pass the state as a prop to todos
+  adding props is just like adding HTML attributes.
+  <Todos todos={this.state.todos}/>
+
+  Looping through the todo list.
+  using map function:
+	this.props.todos.map((todos) => (
+        	<h2>{todos.title}</h2>
+        	))
+
+create another component TodosItem
+install es7 snippents extention
+generate components> rce<tab>
+import TodoItem into Todos.js
+
+return this.props.todos.map((todo) => (
+        <TodoItem key={todo.id} todo={todo}/>
+        )
+    )
+
+
+Prop Types
+	validation for properties a component should have.
+	we can set a type and we can also set them to be 
+	required or not.
+
+In Todos.js 
+	import PropTypes from 'prop-types'
+
+Styling:
+	Add styles to TodoItem div:
+	directly:
+		<div style={{backgroundColor:'#f4f4f4'}}>
+
+	using variables:
+		const itemStyle = {
+			backgroundColor : '#f4f4f4'
+		}
+		<div style={itemStyle}>
+	
+	using functions: beacuse you might want the
+					style to change depending on whether the 
+					task is completed or not.
+		
+		<div style={this.getStyle()}>
+		1.
+		getStyle = () => {
+			if(this.props.todo.completed){
+				return {
+					textDecoration: 'line-through'
+				}
+			}
+			else {
+				return {
+					textDecoration: 'none'
+				}
+			}
+		}
+		2.
+		getStyle = () => {
+			return {
+				textDecoration: this.props.todo.completed ?
+				'line-through' : 'none
+				}
+			}
+
+	Adding a checkbox:
+		<p>
+            <input type='checkbox'/>{'  '}
+            {this.props.todo.title}
+        </p>
+
+Events:
+
+	Lets say we want event based changes to the html.
+	Suppose we need to toggle between completed=true/false
+	based on the checkbox click.
+	For that we need to make changes to the state in App.js
+
+	App.js
+		markComplete = () => {
+			console.log('hello from App.js')
+		}
+	and change the div to :
+	<div className="App">
+        <Todos todos={this.state.todos} markComplete={this.markComplete/>
+        Hello World!
+      </div>	
+
+	Now we will pass the prop from App.js to TodoItem.js
+	by adding the prop markComplete = {this.props.markComplete} to Todos.js
+	and adding the attribute onChange={this.props.markComplete} to checkbox
+
+	Now we also need to know which task we are marking complete.
+	So we need to pass the id. 
+	onChange={this.props.markComplete.bind(this, this.props.todo.id)}
+
+	we can also use destructuring over here to reduce the amount of code.
+	//destructuring
+        const {id, title} = this.props.todo
+		onChange={this.props.markComplete.bind(this, id)}
+
+	now we pass the id in markComplete function and console log id.
+
+	Now, coming to the actual functionality- changing the state in App.js
+	App.js:
+	markComplete = (id) => {
+		this.setState({ todos: this.state.todos.map(todo => {
+			if(todo.id === id) {
+				todo.completed = !todo.completed
+			}
+		})})
+	}
+
+	so onclick of checkbox we are able to run function on App.js
+	which in turn changes the state which changes the styling in TodoItem.js
+
+
+Adding a Delete button:
+
+	follow the same process for del button.
+	Functionality in App.js:
+		delTodo = (id) => {
+			this.setState({todos : [...this.state.todos.filter(todo =>
+			todo.id !== id)]})
+		}
+	
+	Spread [...]
+	Link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+
+Adding a Header:
+	Components>layout>header.js
+	Will be a function based component
+	use rfc shortcut for creating functional component
+	return works like render over here.
+
+Adding a Todo:
+	Components> AddTodo.js
+	rce shortcut
+
+	Functionality:
+		So it is better to have a state for form fields component,
+		if you add more fields, it can be added to the state.
+		add a state to AddTodo.js
+		state = {
+			title: ''
+		}
+
+		As you type in the input field, it should trigger an event,
+			for that to happen we need to add a function
+			onChange = (e) => this.setState({title:e.target.value})
+
+			so we also need to add an onChange attribute to the input tag,
+				onChange={this.onChange}
+			and run the function using the value attribute 
+				value={this.state.title}
+
+			note: if you have additional fields on your form, using the current logic you 
+			will have to add a new onChnage function for each field.
+			In that case it is better to use this code:
+				onChnage = (e) => this.setState({ [e.target.name] : [e.target.value]})
+		
+			now, change state functionality is done,
+			and we come to onSubmit functionality.
+
+			We need the functionality to add Todo in the APP.js onSubmit.
+			So we go to App.js and write the function
+				addTodo = (id) => {
+					const newTodo = {
+						id : 4,
+						title : title,
+						completed : false
+					} 
+					this.setState({todos : [...this.state.todos, newTodo]})
+				}
+
+			Now, instead of hard coding the id,
+			what we get do is generate the random id using a module named uuid
+			so lets install uuid
+				npm i uuid 
+
+			then
+				import { v4 as uuidv4 } from 'uuid'
+				and use uuidv4() instead of id.
+
+			So we add an onSubmit function:
+				onSubmit = (e) => {
+					e.preventDefault()
+					this.props.addTodo(this.state.title)
+					this.setState({ title: ''})
+				}
+
+Okay now before we go into making http requests to JSON placeholder,
+we need to understand working with react router
+
+react router:
+	react router is not a part of react
+	we need to install it seperately
+		npm i react-router-dom
+		now we can runserver again with:  npm start
+
+	lets create a about page for our app.
+		components>pages>about.js
+	Now we dont want to display this about component on the same page,
+	we want it on a seperate page.
+	For this we will make use of the react router
+		in App.js we do the import
+		import { BrowserRouter as Router, Route } from 'react-router-dom'
+		also now if we need to use the router,
+			we need to wrap the main div in App.js inside a <Router> tag.
+			and create one route for the addTodo and Todos component:
+				<Router>
+					<div className="App">
+					<div className='container'>
+						<Header/>
+						<Route exact path="/" render={props => (
+						<React.Fragment>
+							<AddTodo addTodo={this.addTodo}/>
+							{/* Hello World! */}
+							<Todos todos={this.state.todos} markComplete = {this.markComplete}
+							delTodo={this.delTodo}/>
+						</React.Fragment>
+						)} />
+						<Route path='/about' component={about}/>
+					</div>
+					</div>
+				</Router>
+
+	Now we need to add links to navigate from these two pages.
+	So in react we dont have <a> tags, instead we use <Link> tags.
+		Lets add these links in the header.js
+			we need to import Link from react-router-dom:
+				import { Link } from "react-router-dom"
+			and change header to:
+				<header style={headerStyle}>
+            		<h1>My Todo List</h1>
+            		<Link style={linkStyle} to="/">Home</Link> | <Link style={linkStyle} to="/about">About</Link>
+        		</header>
+
+Now lets see how to make http request from react to an api/backend.
+We will make use of JSON placeholder which will act like our backend.
+Link: https://jsonplaceholder.typicode.com/todos
+we just need to make a request to this url and we will get the todos
+	Now, for making requests we can use fetch api.
+	What we will see is usage of axios which is an Http library.
+		npm i axios
+	Then we import axios from 'axios' in App.js
+	Next we empty the todos array and create a componentDidMount method
+	which will run as soon as component mounts.
+		componentDidMount() {
+			axios.get('https://jsonplaceholder.typicode.com/todos')
+			.then(res => this.setState({todos : res.data}))
+		}
+
+Next we want to send request to jsonplaceholder when we add or delete the todo. 
+For this we will make a post requets to the same url.
+it does not save anything on thier server but it mimics a backend and sends the response.
+	for this functionality we will change addTodo and delTodo in App.js
+		addTodo = (title) => {
+			axios.post('https://jsonplaceholder.typicode.com/todos', {
+				title : title,
+				completed : false
+			})
+			.then(res => this.setState({ todos : 
+			[...this.state.todos, res.data]}))
+		}
+
+Next is delTodo
+	delTodo = (id) => {
+		axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+		.then(res => this.setState({ todos: [...this.state.todos.filter
+		(todo => todo.id !== id)]}))
+	}
+note: can take some time for the server to respond.
+
+check propTypes.
+

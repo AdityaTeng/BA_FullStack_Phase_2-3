@@ -1,0 +1,192 @@
+<!-- CSS - Cascading StyleSheets
+
+Not a programming language
+Its a Stylesheet/Styling language.
+CSS is much more free than HTML.
+There are many ways to do the same thing.
+In HTML you have specific tags that are used to create a document whereas
+CSS is used for website design design and layout.    -->
+
+<!-- 3 Methods of adding CSS to your HTML code.
+
+1. Inline CSS       : adding style attribute to the actual html tag, just like title or href.
+                        This not a good practice. Its important to keep the presentation, the 
+                        functionality and the  styeing completely seperate. 
+                        Using inline css is mixing the presentation with styling.
+
+2. Internal CSS     : internal css refers to adding style tags withon the head of you html page.
+                        Better than inline, seperates the style and presentation.
+                        But not the best method. With internal css the styles can be only be
+                        used in that html file.
+
+3. External CSS     : Best and most used. create a seperate file with .css extention and link 
+                        that file with the HTML.     -->
+
+<!-- CSS Syntax
+
+selector {
+    property_1 : value_1;
+    property_2 : value_2;
+
+}
+
+eg:
+
+h1{
+   background-color : grey;
+   color : black; 
+} -->
+        
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to CSS</title>
+    <!-- Using External CSS  -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Internal CSS  -->
+    <style>
+        h2{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <!-- Inline CSS  -->
+    <h1 style="color:red">h1 using inline css</h1>
+    <!-- Internal CSS  -->
+    <h2>h2 using internal css</h2>
+    <!-- External CSS  -->
+    <h3>h3 using external CSS</h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Commodi, molestias consequuntur labore molestiae cupiditate
+        soluta quidem autem rerum enim, nostrum, veniam qui nisi 
+        debitis rem porro. Et minus cum provident.</p>
+    <!-- Adding class attribute for styling. -->
+    <div class="box_1">
+        <h1>Post Heading 1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quam deserunt commodi, possimus consequuntur sapiente
+        reiciendis, recusandae incidunt illum at ducimus aperiam
+        modi quasi ad iure nobis non laboriosam expedita perferendis.</p>
+    </div>
+    <!-- Positioning - sticky -->
+    <!-- <a class="fix-me-2 button" href="">Bottom</a> -->
+    <div class="container">
+        <div class="box_1">
+            <h1>Post Heading 2</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quam deserunt commodi, possimus consequuntur sapiente
+            reiciendis, recusandae incidunt illum at ducimus aperiam
+            modi quasi ad iure nobis non laboriosam expedita perferendis.</p>
+        </div>
+        <div class="box_2">
+            <h1>Post Heading 3</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quam deserunt commodi, possimus consequuntur sapiente
+            reiciendis, recusandae incidunt illum at ducimus aperiam
+            modi quasi ad iure nobis non laboriosam expedita perferendis.</p>
+        </div>
+        <div class="box_3">
+            <h1>Post Heading 4</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quam deserunt commodi, possimus consequuntur sapiente
+            reiciendis, recusandae incidunt illum at ducimus aperiam
+            modi quasi ad iure nobis non laboriosam expedita perferendis.</p>
+        </div>
+        <div class="categories">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#">Category 1</a></li>
+                <li><a href="#">Category 2</a></li>
+                <li><a href="#">Category 3</a></li>
+                <li><a href="#">Category 4</a></li>
+            </ul>
+        </div>
+        <!-- Form -->
+        <form class="my_form" action="">
+            <div class="form_group">
+                <label>Name: </label>
+                <input type="text" name="name">
+            </div>
+            <div class="form_group">
+                <label>Email: </label>
+                <input type="email" name="email">
+            </div>
+            <div class="form_group">
+                <label>Message: </label>
+                <input type="text" name="message">
+            </div>
+            <input class="button" type="submit" value="submit">
+        </form>
+        <!-- Alignment and Floating -->
+        <!-- Floating items with same width  -->
+        <div class="block">
+            <h3>Heading</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Accusantium in pariatur non, doloribus quas voluptatibus,
+                quo doloremque velit necessitatibus itaque sapiente eius soluta.
+                Dolorem dolores soluta praesentium, neque tenetur cupiditate.</p>
+        </div>
+        <div class="block">
+            <h3>Heading</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Accusantium in pariatur non, doloribus quas voluptatibus,
+                quo doloremque velit necessitatibus itaque sapiente eius soluta.
+                Dolorem dolores soluta praesentium, neque tenetur cupiditate.</p>
+        </div>
+        <div class="block">
+            <h3>Heading</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Accusantium in pariatur non, doloribus quas voluptatibus,
+                quo doloremque velit necessitatibus itaque sapiente eius soluta.
+                Dolorem dolores soluta praesentium, neque tenetur cupiditate.</p>
+        </div>
+        <!-- Floating items with different width
+        Main bar and a sidebar -->
+        <div class="clr"></div>
+		<div id="main-block">
+			<h3>Heading</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam,
+			</p>
+		</div>
+		<div id="sidebar">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam,
+			</p>
+        </div>
+		<div class="clr"></div>
+
+         <!-- Positioning in CSS. -->
+		<div class="p-box">
+			<h1>Hello</h1>
+			<h2>Goodbye</h2>
+        </div>
+        <br>
+
+        <!-- Pseudo Elements -->
+		<ul class="my-list">
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+		</ul>
+	</div><!-- ./container -->
+
+    <a class="fix-me button" href="">TOP</a>
+    </div>
+</body>
+</html>

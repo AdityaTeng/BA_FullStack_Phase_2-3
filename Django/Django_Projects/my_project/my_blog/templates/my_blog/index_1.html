@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <title>My Blog</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+              <img src="../../static/img/101_2.jpg" width="66" height="44" class="d-inline-block align-top" alt="" loading="lazy">
+              Blog 101
+            </a>
+          </nav>
+    </header>
+    <div class="sidenav">
+        {% for category in categories %}
+        <a href="#">{{ category.title }}</a>
+        {% endfor %}
+    </div>
+</body>
+</html>
